@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+<style>
+    @keyframes glitch-anim-1 {
+        0% {
+            clip: rect(38px, 700px, 79px, 0);
+        }
+        5.88235% {
+            clip: rect(22px, 700px, 79px, 0);
+        }
+        11.76471% {
+            clip: rect(104px, 700px, 19px, 0);
+        }
+        17.64706% {
+            clip: rect(109px, 700px, 70px, 0);
+        }
+        23.52941% {
+            clip: rect(51px, 700px, 111px, 0);
+        }
+        29.41176% {
+            clip: rect(52px, 700px, 85px, 0);
+        }
+        35.29412% {
+            clip: rect(7px, 700px, 17px, 0);
+        }
+        41.17647% {
+            clip: rect(33px, 700px, 10px, 0);
+        }
+        47.05882% {
+            clip: rect(115px, 700px, 98px, 0);
+        }
+        52.94118% {
+            clip: rect(25px, 700px, 58px, 0);
+        }
+        58.82353% {
+            clip: rect(3px, 700px, 37px, 0);
+        }
+        64.70588% {
+            clip: rect(55px, 700px, 68px, 0);
+        }
+        70.58824% {
+            clip: rect(78px, 700px, 26px, 0);
+        }
+        76.47059% {
+            clip: rect(36px, 700px, 96px, 0);
+        }
+        82.35294% {
+            clip: rect(8px, 700px, 45px, 0);
+        }
+        88.23529% {
+            clip: rect(69px, 700px, 28px, 0);
+        }
+        94.11765% {
+            clip: rect(94px, 700px, 91px, 0);
+        }
+        100% {
+            clip: rect(61px, 700px, 75px, 0);
+        }
+    }
+    @keyframes glitch-anim-2 {
+        0% {
+            clip: rect(47px, 700px, 102px, 0);
+        }
+        5.88235% {
+            clip: rect(18px, 700px, 13px, 0);
+        }
+        11.76471% {
+            clip: rect(22px, 700px, 65px, 0);
+        }
+        17.64706% {
+            clip: rect(7px, 700px, 92px, 0);
+        }
+        23.52941% {
+            clip: rect(62px, 700px, 45px, 0);
+        }
+        29.41176% {
+            clip: rect(7px, 700px, 55px, 0);
+        }
+        35.29412% {
+            clip: rect(27px, 700px, 18px, 0);
+        }
+        41.17647% {
+            clip: rect(77px, 700px, 15px, 0);
+        }
+        47.05882% {
+            clip: rect(99px, 700px, 32px, 0);
+        }
+        52.94118% {
+            clip: rect(63px, 700px, 43px, 0);
+        }
+        58.82353% {
+            clip: rect(58px, 700px, 76px, 0);
+        }
+        64.70588% {
+            clip: rect(71px, 700px, 101px, 0);
+        }
+        70.58824% {
+            clip: rect(115px, 700px, 25px, 0);
+        }
+        76.47059% {
+            clip: rect(95px, 700px, 34px, 0);
+        }
+        82.35294% {
+            clip: rect(9px, 700px, 45px, 0);
+        }
+        88.23529% {
+            clip: rect(33px, 700px, 38px, 0);
+        }
+        94.11765% {
+            clip: rect(93px, 700px, 88px, 0);
+        }
+        100% {
+            clip: rect(39px, 700px, 7px, 0);
+        }
+    }
+
+    body {
+        text-align: center;
+    }
+
+    .glitch {
+        position: relative;
+        display: inline-block;
+        font-size: 120px;
+        text-align: center;
+        margin-top: 20vh;
+    }
+    .glitch:before, .glitch:after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        clip: rect(0, 0, 0, 0);
+    }
+    .glitch:after {
+        left: 2px;
+        text-shadow: -1px 0 red;
+        animation: glitch-anim-1 2s infinite linear alternate-reverse;
+    }
+    .glitch:before {
+        left: -2px;
+        text-shadow: 2px 0 blue;
+        animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    }
+
+</style>
+<h1 class="glitch" data-text="Just Do It!">
+    Just Do It!
+</h1>
+</body>
+</html>
